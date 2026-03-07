@@ -31,7 +31,7 @@ cask "1password"
 cask "orbstack"
 cask "raycast"
 cask "slack"
-cask "tailscale"
+cask "tailscale-app"
 cask "zen"
 
 # Development
