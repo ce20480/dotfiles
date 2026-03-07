@@ -18,6 +18,19 @@ cd ~/dotfiles && chmod +x setup.sh && ./setup.sh
 
 # 5. Authenticate GitHub
 gh auth login
+
+# 6. Generate SSH key
+ssh-keygen -t ed25519 -C "your-email@example.com"
+cat ~/.ssh/id_ed25519.pub
+# Add to GitHub: Settings > SSH and GPG keys > New SSH key
+
+# 7. Set git identity
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+
+# 8. Set up Raycast
+# Open Raycast > Set hotkey to Cmd+Space
+# System Settings > Keyboard > Keyboard Shortcuts > Spotlight > uncheck both
 ```
 
 ## What's Included
@@ -33,20 +46,27 @@ gh auth login
 | Dev | awscli, libpq (psql), gh, OrbStack |
 | Apps | Raycast (Spotlight replacement) |
 
+## What setup.sh Does
+
+1. Installs Homebrew
+2. Installs all packages from Brewfile
+3. Symlinks configs (.zshrc, .wezterm.lua, .p10k.zsh, .zshenv) to home directory
+4. Clones nvim + tmux configs
+5. Installs Node LTS via fnm + yarn
+6. Installs Python 3.13 via pyenv
+7. Creates SSH config (agent persistence with macOS Keychain)
+8. Sets git defaults (default branch: main, editor: nvim)
+
 ## Machine-Specific Overrides
 
 Create `~/.zshrc.local` for anything specific to one machine (not committed):
 
 ```bash
-# Example: personal project aliases
-alias phone-log="/path/to/some/script.sh"
+# Example: work-specific settings
 export SOME_API_KEY="value"
+alias myalias="/path/to/script.sh"
 ```
 
-## SSH Key (for new machines)
+## SSH
 
-```bash
-ssh-keygen -t ed25519 -C "your-email@example.com"
-cat ~/.ssh/id_ed25519.pub
-# Add to GitHub: Settings > SSH and GPG keys > New SSH key
-```
+setup.sh creates `~/.ssh/config` with agent persistence so you only need to enter your key passphrase once per reboot (stored in macOS Keychain).
