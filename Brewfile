@@ -32,6 +32,7 @@ cask "orbstack"
 cask "raycast"
 cask "slack"
 cask "tailscale"
+cask "zen"
 
 # Development
 brew "awscli"
