@@ -75,8 +75,8 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # ---- fzf (fuzzy finder: Ctrl-R history, Ctrl-T file search) ----
 source <(fzf --zsh)
 
+# Claude Code
+export PATH="$HOME/.local/bin:$PATH"
+
 # Machine-specific overrides (not committed)
 source ~/.zshrc.local 2>/dev/null
-
-# Claude code path
-export PATH="$HOME/.local/bin:$PATH"

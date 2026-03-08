@@ -43,6 +43,8 @@ brew "gh"
 brew "ripgrep"
 brew "lazygit"
 brew "jq"
+brew "terraform"
+cask "gcloud-cli"
 
 # Supabase
 tap "supabase/tap"

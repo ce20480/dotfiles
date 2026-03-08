@@ -46,6 +46,12 @@ fnm install --lts
 fnm default $(fnm current)
 npm install -g yarn
 
+echo "=== Installing Claude Code ==="
+curl -fsSL https://claude.ai/install.sh | bash
+
+echo "=== Installing npm globals ==="
+npm install -g @googleworkspace/cli
+
 echo "=== Setting up Python (pyenv) ==="
 pyenv install -s 3.13
 pyenv global 3.13
