@@ -12,11 +12,12 @@ cask "font-symbols-only-nerd-font"
 # Editor
 brew "neovim"
 
-# CLI (referenced in .zshrc)
+# CLI (referenced in .zshrc and tmux.conf)
 brew "eza"
 brew "zoxide"
 brew "fzf"
 brew "yazi"
+brew "sesh"
 brew "coreutils"
 brew "git"
 

@@ -31,6 +31,15 @@ else
   echo "tmux config already exists, skipping"
 fi
 
+echo "=== Installing tmux plugins (TPM) ==="
+if [ ! -d "$HOME/.config/tmux/plugins/tpm" ]; then
+  git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
+fi
+"$HOME/.config/tmux/plugins/tpm/bin/install_plugins"
+
+echo "=== Bootstrapping Neovim plugins ==="
+nvim --headless "+Lazy! sync" +qa
+
 echo "=== Setting up Node (fnm) ==="
 eval "$(fnm env)"
 fnm install --lts

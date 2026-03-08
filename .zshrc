@@ -77,3 +77,6 @@ source <(fzf --zsh)
 
 # Machine-specific overrides (not committed)
 source ~/.zshrc.local 2>/dev/null
+
+# Claude code path
+export PATH="$HOME/.local/bin:$PATH"

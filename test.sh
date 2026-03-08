@@ -44,5 +44,11 @@ check "SSH key exists"    "[ -f ~/.ssh/id_ed25519 ]"
 check "GitHub SSH auth"   "ssh -T git@github.com 2>&1 | grep -q 'successfully authenticated'"
 
 echo ""
+echo "Tmux:"
+check "TPM installed"           "[ -d ~/.config/tmux/plugins/tpm ]"
+check "vim-tmux-navigator"      "[ -d ~/.config/tmux/plugins/vim-tmux-navigator ]"
+check "sesh"                    "command -v sesh"
+
+echo ""
 echo "---"
 echo "$pass passed, $fail failed"
