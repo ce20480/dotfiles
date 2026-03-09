@@ -11,6 +11,7 @@ cask "font-symbols-only-nerd-font"
 
 # Editor
 brew "neovim"
+brew "tree-sitter-cli"
 
 # CLI (referenced in .zshrc and tmux.conf)
 brew "eza"
@@ -46,6 +47,10 @@ brew "lazygit"
 brew "jq"
 brew "terraform"
 cask "gcloud-cli"
+
+# Stripe
+tap "stripe/stripe-cli"
+brew "stripe/stripe-cli/stripe"
 
 # Supabase
 tap "supabase/tap"
