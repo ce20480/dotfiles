@@ -22,6 +22,7 @@ brew "coreutils"
 brew "git"
 
 # Languages & Runtimes
+brew "go"
 brew "pyenv"
 brew "pyenv-virtualenv"
 brew "fnm"

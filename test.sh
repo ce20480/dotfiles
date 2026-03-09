@@ -36,6 +36,8 @@ check "psql"              "psql --version"
 check "aws cli"           "aws --version"
 check "gh cli"            "gh --version"
 check "git"               "git --version"
+check "go"                "go version"
+check "terraform"         "terraform --version"
 check "EDITOR=nvim"       "[ \"$EDITOR\" = 'nvim' ]"
 
 echo ""
